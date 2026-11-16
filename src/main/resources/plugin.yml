@@ -1,0 +1,25 @@
+name: GeyserForceRespawn
+main: dev.forcerespawn.ForceRespawnPlugin
+version: '${project.version}'
+api-version: '1.17'
+description: Lets staff force-respawn players (incl. Geyser/Floodgate Bedrock players) stuck in a death/void softlock.
+authors: [GeyserForceRespawn]
+softdepend: [Geyser-Spigot, floodgate]
+
+commands:
+  forcerespawn:
+    description: Force a stuck player through a server-side respawn.
+    usage: /<command> <player> [force]
+    aliases: [frespawn]
+    permission: forcerespawn.use
+
+permissions:
+  forcerespawn.use:
+    description: Use /forcerespawn
+    default: op
+  forcerespawn.force:
+    description: Use the "force" flag to recover a player who is alive and not in the void
+    default: op
+  forcerespawn.bypass-cooldown:
+    description: Ignore the per-target cooldown
+    default: op
